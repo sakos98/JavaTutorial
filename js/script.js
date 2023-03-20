@@ -1,17 +1,12 @@
-function playGame() {
+function playGame(playerInput) {
 
-  function clearMessages() {
     document.getElementById('messages').innerHTML = '';
-  }
 
   function printMessage(msg) {
     let div = document.createElement('div');
     div.innerHTML = msg;
     document.getElementById('messages').appendChild(div);
   }
-
-  let computerMove = "nieznany ruch";
-  let playerMove = 3;
 
   function getMoveName(moveId) {
     if (moveId == 1) {
@@ -20,10 +15,7 @@ function playGame() {
       return 'papier';
     } else if (moveId == 3) {
       return 'nozyce';
-    } else {
-      printMessage('Podaj liczbę z zakresu od 1-3')
-    }
-
+    } 
   }
 
   let randomFraction = Math.random();
@@ -31,7 +23,7 @@ function playGame() {
   let moveIdComputer = Math.floor(calculation);
 
   const computerMoveName = getMoveName(moveIdComputer);
-  const playerMoveName = getMoveName(playerMove);
+  const playerMoveName = getMoveName(playerInput);
 
   function displayResult(computerMove, playerMove) {
     printMessage('Zagrałeś ' + playerMove + ', a komputer ' + computerMove);
@@ -56,11 +48,11 @@ function playGame() {
 }
 
  document.getElementById('play-rock').addEventListener('click', function(){
-  console.log(playGame(1));
+  playGame(1);
 });
 document.getElementById('play-paper').addEventListener('click', function(){
-  console.log(playGame(2));
+  playGame(2);
 });
 document.getElementById('play-scizors').addEventListener('click', function(){
-  console.log(playGame(3));
+  playGame(3);
 }); 
