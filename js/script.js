@@ -1,6 +1,6 @@
 function playGame(playerInput) {
 
-    document.getElementById('messages').innerHTML = '';
+  document.getElementById('messages').innerHTML = '';
 
   function printMessage(msg) {
     let div = document.createElement('div');
@@ -16,14 +16,14 @@ function playGame(playerInput) {
     } else if (moveId == 3) {
       return 'nozyce';
     } 
-  }
+  }                         
 
   let randomFraction = Math.random();
-  let calculation = randomFraction * 3 + 1;
-  let moveIdComputer = Math.floor(calculation);
+      calculation = randomFraction * 3 + 1;
+      moveIdComputer = Math.floor(calculation);
 
   const computerMoveName = getMoveName(moveIdComputer);
-  const playerMoveName = getMoveName(playerInput);
+         playerMoveName = getMoveName(playerInput);
 
   function displayResult(computerMove, playerMove) {
     printMessage('Zagrałeś ' + playerMove + ', a komputer ' + computerMove);
@@ -47,6 +47,25 @@ function playGame(playerInput) {
   displayResult(computerMoveName, playerMoveName);
 }
 
+function buttonRock(){
+  playGame(1);
+}
+let playRock = document.getElementById('play-rock');
+playRock.addEventListener('click', buttonRock);
+
+function buttonPaper(){
+  playGame(2);
+}
+let playPaper = document.getElementById('play-paper');
+playPaper.addEventListener('click', buttonPaper);
+
+function buttonScizors(){
+  playGame(3);
+}
+let playScizors = document.getElementById('play-scizors');
+playScizors.addEventListener('click', buttonScizors);
+
+/*
  document.getElementById('play-rock').addEventListener('click', function(){
   playGame(1);
 });
@@ -55,4 +74,4 @@ document.getElementById('play-paper').addEventListener('click', function(){
 });
 document.getElementById('play-scizors').addEventListener('click', function(){
   playGame(3);
-}); 
+}); */
