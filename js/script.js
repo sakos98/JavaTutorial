@@ -21,6 +21,7 @@ function playGame(playerInput) {
   let randomFraction = Math.random();
       calculation = randomFraction * 3 + 1;
       moveIdComputer = Math.floor(calculation);
+    
 
   const computerMoveName = getMoveName(moveIdComputer);
          playerMoveName = getMoveName(playerInput);
